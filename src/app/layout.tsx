@@ -1,6 +1,10 @@
+import { Suspense } from 'react'
 import { Roboto } from 'next/font/google'
 import { Footer } from '@/components/shared/Footer'
 import { Header } from '@/components/shared/Header'
+import { Description } from '@/components/home/Description'
+import { Hero } from '@/components/home/Hero'
+import { Loader } from '@/components/shared/Loader'
 import '@/sass/globals.sass'
 
 const roboto = Roboto({
@@ -17,7 +21,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         <Header />
-        {children}
+        <Hero />
+        <Description/>
+        <Suspense fallback={<Loader />}>
+          {children}
+        </Suspense>
         <Footer />
       </body>
 
