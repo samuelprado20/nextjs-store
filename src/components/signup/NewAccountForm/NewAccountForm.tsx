@@ -8,6 +8,8 @@ export const NewAccountForm = () => {
   const [errors, setErrors] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
+  const [password, setPassword] = useState('')
+
   const handleSubmit = async (event) => {
     event.preventDefault()
     const formData = new FormData(event.target)
