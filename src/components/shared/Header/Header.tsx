@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { ShoppingCart } from '../ShoppingCart' 
 import styles from './Header.module.sass'
 import { validateAccessToken } from "@/utils/auth/validateAccessToken"
 
@@ -26,6 +27,7 @@ export const Header = async () => {
           ? (<span>Hello {customer.firstName}</span>)
           : (<Link href='/login'>Log in</Link>)
         }
+        <ShoppingCart />
       </div>
     </header>
   )
